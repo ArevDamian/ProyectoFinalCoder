@@ -1,0 +1,14 @@
+{% extends "MyBus/iniciocolectivo3.html" %}
+
+{% load static %}{% block a %}
+
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+ 
+    {%for Colectivo in colectivos_todos%}
+        <p>Linea: {{Colectivo.linea_colectivo}}</p>
+        <p>Numero: {{Colectivo.numero_colectivo}}</p>
+        <p>Ramal: {{Colectivo.ramal_colectivo}}</p>
+    {%endfor%}
+    <a href="{% url 'Colectivos'%}"><input type="submit" value="Regresar"></a>
+
+{% endblock %}

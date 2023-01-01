@@ -1,0 +1,14 @@
+{% extends "MyBus/iniciotarifa2.html" %}
+
+{% load static %}{% block a %}
+
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+ 
+    {%for Tarifa in tarifas_todos%}
+        <p>Linea: {{Tarifa.linea_colectivo}}</p>
+        <p>Tarifa: {{Tarifa.valor_pasaje}}</p>
+        <p>Ramal: {{Tarifa.ramal_colectivo}}</p>
+    {%endfor%}
+    <a href="{% url 'Tarifas'%}"><input type="submit" value="Regresar"></a>
+
+{% endblock %}

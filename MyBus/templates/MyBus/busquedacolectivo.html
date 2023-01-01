@@ -1,0 +1,17 @@
+{% extends "MyBus/iniciocolectivo3.html" %}
+
+{% load static %}{% block a %}
+
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+
+<h1>Buscar colectivo</h1>
+
+
+<p>
+    <form action="/MyBus/buscar/" method="GET">{%csrf_token%}
+        <input type="text" name="linea_colectivo" id="linea_colectivo">
+        <input type="submit" value="Buscar">
+    </form>
+</p>
+
+{% endblock %}

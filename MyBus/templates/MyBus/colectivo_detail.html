@@ -1,0 +1,13 @@
+{% extends "MyBus/iniciocolectivo3.html" %}
+
+{% load static %}{% block a %}
+<h3>Detalle</h3>
+    
+        <p>Linea: {{colectivo.linea_colectivo}}
+        <p>Numero: {{colectivo.numero_colectivo}}    
+        <p>Ramal: {{colectivo.ramal_colectivo}}</p>
+
+        <a href="{% url 'Colectivos' %}"><input type="submit" value="Regresar"></a>
+
+    
+{% endblock %}

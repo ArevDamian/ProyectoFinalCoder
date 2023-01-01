@@ -1,0 +1,16 @@
+{% extends "MyBus/iniciorecorrido2.html" %}
+
+{% load static %}{% block a %}
+
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+ 
+    {%for Recorrido in recorridos_todos%}
+        <p>Linea: {{Recorrido.linea_colectivo}}</p>
+        <p>Incio: {{Recorrido.inicio}}</p>
+        <p>Destino: {{Recorrido.destino}}</p>
+        <p>Minutos: {{Recorrido.minutos_viaje}}</p>
+        <p>Ramal: {{Recorrido.ramal_colectivo}}</p>
+    {%endfor%}
+    <a href="{% url 'Recorrido'%}"><input type="submit" value="Regresar"></a>
+
+{% endblock %}

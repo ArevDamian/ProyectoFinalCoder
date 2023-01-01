@@ -1,0 +1,20 @@
+{% extends "MyBus/iniciotarifa2.html" %}
+
+{% load static %}{% block a %}
+
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<h3>Listado Tarifas</h3>   <a href="{% url 'Tarifas'%}"><input type="submit" value="Inicio"></a>
+
+    <ul>
+        {%for Tarifa in object_list%}
+            <p>{{Tarifa.linea_colectivo}}</p>
+            <p>
+                <a href="{% url 'Detallet' Tarifa.id %}"><input type="submit" value="Ver"></a>
+                <a href="{% url 'Editart' Tarifa.id %}"><input type="submit" value="Editar"></a>
+                <a href="{% url 'Eliminart' Tarifa.id %}"><input type="submit" value="Borrar"></a>
+            </p>
+        {%endfor%}
+    </ul>
+    
+
+{% endblock %}
